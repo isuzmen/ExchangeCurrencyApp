@@ -30,7 +30,7 @@ function Currency() {
           type="number"
           className='amount'
         />
-        
+  
         <select
           onChange={(e) => setFromCurrency(e.target.value)}
           className='from-currency-option'
@@ -39,9 +39,9 @@ function Currency() {
           <option>EUR</option>
           <option>TRY</option>
         </select>
-
+  
         <FaArrowAltCircleRight style={{ fontSize: '25px', color: 'white', marginRight: '10px' }} />
-
+  
         <select
           onChange={(e) => setToCurrency(e.target.value)}
           className='to-currency-option'
@@ -50,13 +50,21 @@ function Currency() {
           <option>USD</option>
           <option>EUR</option>
         </select>
-
+  
         <input
           value={result}
           type="number"
           className='result'
           readOnly
         />
+      </div>
+      <div>
+        <button
+          onClick={exchange}
+          className='exchange-button'
+        >
+          Exchange
+        </button>
       </div>
     </div>
   );
