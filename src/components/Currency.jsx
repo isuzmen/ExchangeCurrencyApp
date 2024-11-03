@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/currency.css';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 import axios from 'axios';
 
 const BASE_URL = "https://api.freecurrencyapi.com/v1/latest";
@@ -29,10 +30,36 @@ function Currency() {
           type="number"
           className='amount'
         />
+        
+        <select
+          onChange={(e) => setFromCurrency(e.target.value)}
+          className='from-currency-option'
+        >
+          <option>USD</option>
+          <option>EUR</option>
+          <option>TRY</option>
+        </select>
+
+        <FaArrowAltCircleRight style={{ fontSize: '25px', color: 'white', marginRight: '10px' }} />
+
+        <select
+          onChange={(e) => setToCurrency(e.target.value)}
+          className='to-currency-option'
+        >
+          <option>TRY</option>
+          <option>USD</option>
+          <option>EUR</option>
+        </select>
+
+        <input
+          value={result}
+          type="number"
+          className='result'
+          readOnly
+        />
       </div>
     </div>
   );
 }
 
 export default Currency;
-
